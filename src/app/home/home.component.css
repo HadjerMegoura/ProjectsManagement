@@ -1,0 +1,22 @@
+li {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(179, 168, 241);
+}
+
+ul {
+    width: 900px;
+    margin: auto;
+}
+
+h4 {
+    text-align: center;
+    text-decoration: solid;
+    margin: 25px;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+}

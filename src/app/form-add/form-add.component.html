@@ -1,0 +1,22 @@
+<form #addForm="ngForm" (ngSubmit)="addProject(addForm.value)">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input name="titre" type="text" class="form-control" id="title" aria-describedby="emailHelp" required minlength="10" placeholder="Enter title" #titre="ngModel" ngModel>
+        <div *ngIf="titre.errors">
+            <div style="color: red;" *ngIf="titre.errors['required'] 
+            && titre.touched">Ce champ est obligatoire</div>
+            <div style="color: red;" *ngIf="titre.errors['minlength'] && titre.dirty">trop court</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Description</label>
+        <textarea placeholder="description" class="form-control" id="description" name="description" #description="ngModel" ngModel required minlength="10"></textarea>
+        <div *ngIf="description.errors">
+            <div style="color : red;" *ngIf="description.errors['minlength'] && description.dirty">trop court , </div>
+            <div style="color: red;" *ngIf="description.errors['required'] && titre.touched">Ce champ est obligatoire</div>
+        </div>
+    </div>
+    <button name="submit" type="submit" #submit="ngModel" ngModel *ngIf="addForm.valid">Add</button>
+    <button name="submit" type="submit" #submit="ngModel" ngModel *ngIf="addForm.invalid" disabled>Add</button>
+</form>
